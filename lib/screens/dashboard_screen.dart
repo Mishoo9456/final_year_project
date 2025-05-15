@@ -1,11 +1,9 @@
-import 'package:final_year_project/screens/task_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-import 'package:final_year_project/screens/create_task_screen.dart';
-import 'package:final_year_project/screens/login_screen.dart';
-
-import 'create_recognition_screen.dart';
+import '../screens/create_task_screen.dart';
+import '../screens/login_screen.dart';
+import '../screens/employee_recognition_screen.dart';
+import '../screens/task_list_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -31,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     super.initState();
     _screens.addAll([
       const EmployeeTaskListScreen(),
-      const CreateRecognitionScreen(employeeId: '',),
+      const EmployeeRecognitionScreen(), // <-- show recognitions list
       CreateTaskScreen(onTaskCreated: _showTaskCreatedSnackbar),
     ]);
   }
@@ -82,6 +80,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     final isDark = _isDarkMode;
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: isDark
           ? ThemeData.dark(useMaterial3: true)
           : ThemeData.light(useMaterial3: true),
@@ -90,9 +89,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           elevation: 6,
           backgroundColor: _navBarColors[_selectedIndex],
           shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(20),
-            ),
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
           ),
           title: const Padding(
             padding: EdgeInsets.only(left: 4.0),
