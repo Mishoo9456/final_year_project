@@ -1,9 +1,10 @@
+import 'package:final_year_project/screens/task_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../screens/create_task_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/employee_recognition_screen.dart';
-import '../screens/task_list_screen.dart';
+//import '../screens/employee_task_list_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -29,8 +30,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     super.initState();
     _screens.addAll([
       const EmployeeTaskListScreen(),
-      const EmployeeRecognitionScreen(), // <-- show recognitions list
-      CreateTaskScreen(onTaskCreated: _showTaskCreatedSnackbar),
+      const EmployeeRecognitionScreen(),
+      //CreateTaskScreen(onTaskCreated: _showTaskCreatedSnackbar),
     ]);
   }
 
@@ -139,12 +140,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
               activeIcon: const Icon(Icons.emoji_events),
               label: 'Recognitions',
             ),
-            BottomNavigationBarItem(
-              backgroundColor: _navBarColors[2],
-              icon: const Icon(Icons.add_task_outlined),
-              activeIcon: const Icon(Icons.add_task),
-              label: 'Create Task',
-            ),
+            // BottomNavigationBarItem(
+            //   backgroundColor: _navBarColors[2],
+            //   icon: const Icon(Icons.add_task_outlined),
+            //   activeIcon: const Icon(Icons.add_task),
+            //   label: 'Create Task',
+            // ),
           ],
         ),
       ),

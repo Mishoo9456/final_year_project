@@ -38,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     if (context.mounted) {
       if (user != null) {
-        Navigator.pushReplacementNamed(context, '/admin');
+        Navigator.pushReplacementNamed(context, '/dashboard');
       } else if (isFirstTime) {
         await prefs.setBool('isFirstTimeUser', false);
         Navigator.pushReplacement(
