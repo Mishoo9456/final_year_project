@@ -1,3 +1,5 @@
+import 'package:final_year_project/screens/adminDashboard.dart';
+import 'package:final_year_project/screens/adminDashboard.dart';
 import 'package:final_year_project/screens/dashboard_screen.dart';
 import 'package:final_year_project/screens/login_screen.dart';
 import 'package:final_year_project/screens/signup_screen.dart';
@@ -36,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignUpPage(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/admin': (context) => const AdminDashboardScreen (),
       },
     );
   }

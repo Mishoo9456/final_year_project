@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../services/uihelper.dart';
+import 'adminDashboard.dart';
 import 'dashboard_screen.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
       try {
         UserCredential? usercredential = await FirebaseAuth.instance
             .signInWithEmailAndPassword(email: email, password: password);
-       Navigator.push(context, MaterialPageRoute(builder: (context)=>DashboardScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminDashboardScreen ()));
 
 
       } on FirebaseAuthException catch(ex){
@@ -47,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
             UiHelper.CustomTextField(emailController, "Email", Icons.mail, false),
             UiHelper.CustomTextField(
                 passwordController, "Password", Icons.password, true),
+
             const SizedBox(height: 30),
             UiHelper.CustomButton(() async{
               await  login(emailController.text.toString(),
