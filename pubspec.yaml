@@ -40,7 +40,7 @@ dependencies:
   cloud_firestore: ^4.15.4
   firebase_auth_web: ^5.8.13
 
-  shared_preferences: ^2.2.2  # Or latest stable version
+  shared_preferences: ^2.2.2
 
 
 
